@@ -6,12 +6,11 @@ def binary_search(arr, target):
             if arr[mid] == target:
                 return mid  
             elif arr[mid] < target:
-                return binary_search_recursive(arr, target, mid + 1, right)  # Search the right half
+                return binary_search_recursive(arr, target, mid + 1, right) 
             else:
-                return binary_search_recursive(arr, target, left, mid - 1)  # Search the left half
+                return binary_search_recursive(arr, target, left, mid - 1)  
         else:
-            return -1  
-    
+            return -1      
     
     return binary_search_recursive(arr, target, 0, len(arr) - 1)
 
@@ -24,10 +23,8 @@ print("Enter the elements of the array:")
 for i in range(n):
     arr.append(int(input()))
 
-
 target = int(input("Enter the element to search for: "))
 result = binary_search(arr, target)
-
 
 if result != -1:
     print(f"Element found at index {result}")
